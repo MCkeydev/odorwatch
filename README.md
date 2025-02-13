@@ -79,26 +79,8 @@ Le système est divisé en plusieurs modules interconnectés :
 ## Schéma d'Assemblage
 
 Le montage se réalise sur une breadboard. Voici un schéma simplifié pour vous aider :
+![Schema](schema.png)
 
-```
-                    +----------------------+
-                    |       ESP32          |
-                    |                      |
-                    |  [GPIO...]           |
-                    +---------+------------+
-                              │
-      ┌──────────────┬───────┴───────┬──────────────┐
-      │              │               │              │
-   [Capteur]      [Capteur]       [LCD Module]   [Fan Blade]
-      │              │               │              │
-      │              │         ┌─────┴─────┐        │
-      │              │         │ Schéma de │        │
-      │              │         │  câblage  │        │
-      │              │         └───────────┘        │
-      └──────────────┴────────────────────────────────┘
-                              │
-                           (GND commun)
-```
 
 > **Remarque :**  
 > - Pour le LCD 1602, utilisez le mode 4 bits en connectant uniquement RS, RW (à la masse), E et D4-D7.  
@@ -110,7 +92,7 @@ Le montage se réalise sur une breadboard. Voici un schéma simplifié pour vous
 
 Voici une photo de notre montage sur breadboard pour vous donner une idée de l'assemblage final :
 
-![Breadboard Photo](schema.png)
+![Schema](schema.png)
 
 > **Astuce :** Remplacez `breadboard_photo.jpg` par le chemin d'accès à votre image réelle.
 
