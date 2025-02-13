@@ -110,7 +110,7 @@ Le montage se réalise sur une breadboard. Voici un schéma simplifié pour vous
 
 Voici une photo de notre montage sur breadboard pour vous donner une idée de l'assemblage final :
 
-![Breadboard Photo](breadboard_photo.jpg)
+![Breadboard Photo](schema.png)
 
 > **Astuce :** Remplacez `breadboard_photo.jpg` par le chemin d'accès à votre image réelle.
 
