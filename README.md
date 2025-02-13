@@ -83,8 +83,7 @@ Le montage se réalise sur une breadboard. Voici un schéma simplifié pour vous
 
 
 > **Remarque :**  
-> - Pour le LCD 1602, utilisez le mode 4 bits en connectant uniquement RS, RW (à la masse), E et D4-D7.  
-> - Les capteurs et le ventilateur se connectent aux broches appropriées de l’ESP32 selon votre plan de câblage.
+> - Le schéma présenté ne correspond pas encore totalement au projet final, car certains capteurs manquent encore. En attendant, nous avons réalisé un projet intermédiaire utilisant des LEDs : en fonction de la position du joystick, la LED correspondante s’allume.
 
 ---
 
@@ -92,9 +91,9 @@ Le montage se réalise sur une breadboard. Voici un schéma simplifié pour vous
 
 Voici une photo de notre montage sur breadboard pour vous donner une idée de l'assemblage final :
 
-![Photo d'assemblage](photo.jpg)
+![Photo d'assemblage](photo.png)
 
-> **Astuce :** Remplacez `breadboard_photo.jpg` par le chemin d'accès à votre image réelle.
+> **Remaque :** La photo présenté ne correspond pas encore totalement au projet final, car certains capteurs manquent encore. En attendant, nous avons réalisé un projet intermédiaire utilisant des LEDs : en fonction de la position du joystick, la LED correspondante s’allume.
 
 ---
 
