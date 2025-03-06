@@ -15,6 +15,7 @@ Bienvenue dans le projet **OdorWatch** ! Ce projet a pour but de développer une
 7. [Photo de la Breadboard](#photo-de-la-breadboard)
 8. [Installation de MicroPython et Thonny](#installation-de-micropython-et-thonny)
 9. [Conclusion](#conclusion)
+10. [Objets Connectés](#tp-objets-connectés)
 
 ---
 
@@ -147,3 +148,25 @@ Vous êtes maintenant prêt à programmer votre ESP32 en MicroPython avec Thonny
 
 Le projet **OdorWatch** combine plusieurs technologies pour créer une solution IoT complète visant à améliorer la qualité de l'air dans des environnements confinés. Grâce à une architecture modulaire basée sur l’ESP32 et à l’utilisation de MicroPython, ce projet est facilement modifiable et évolutif.  
 Nous espérons que ce README vous aidera à comprendre le projet, à assembler le montage et à démarrer rapidement avec MicroPython et Thonny. N’hésitez pas à personnaliser et à améliorer le système selon vos besoins !
+
+## TP Objets Connectés
+
+1. **Documentation du circuit électrique**
+![schéma électrique](schema_elec.png)
+
+Notre circuit électrique est conçu pour récupérer les données du capteur de gaz; au dessus d'un certain seuil, le code allume la LED et le ventilateur. Il y a une batterie pour alimenter le ventilateur.
+
+2. **Documentation de l'architecture IOT**
+![archi](archi_IOT_TP.png)
+
+3. **Comment lancer le projet**
+   - Reproduire le schéma électrique
+   - Démarrer la Raspberry PI
+   - Connecter la Raspberry PI à son réseau
+   - Modifier la configuration WIFI sur les ESP32 pour les connecter à son réseau
+   - Rajouter ces deux lignes dans le fichier de config du Raspberry PI :
+      ```bash
+      listener 1883
+      allow_anonymous true
+      ```
+   - Lancer le service mosquito sur la Raspberry PI
