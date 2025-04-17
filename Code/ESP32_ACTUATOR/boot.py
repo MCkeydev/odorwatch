@@ -3,10 +3,11 @@ import network
 import time
 import ujson
 from umqtt.simple import MQTTClient
+import webrepl
 
 # --- Configuration WiFi ---
-ssid = "Galaxy S22 4473"
-password = "mjet3193"
+ssid = "Matthieu"
+password = "alternant"
 
 def connect_wifi():
     wlan = network.WLAN(network.STA_IF)
@@ -18,14 +19,19 @@ def connect_wifi():
     return wlan
 
 wlan = connect_wifi()
+webrepl.start()
+
+
 
 # --- Configuration MQTT ---
-mqtt_server = "raspberrypi.local"  # Adresse de votre broker
+mqtt_server = "192.168.197.72"  # Adresse de votre broker
 client_id = "ESP32_Actuator"
+username = "user1"  # Remplace par ton utilisateur MQTT
+password = "123456789"  # Remplace par ton mot de passe MQTT
 topic_gas = b"odorwatch/gassensor"
 topic_kpi = b"odorwatch/kpi"
 
-client = MQTTClient(client_id, mqtt_server, port=1883)
+client = MQTTClient(client_id, mqtt_server, port=1883, user=username, password=password)
 
 # --- Configuration de l'actionneur ---
 # LED sur GPIO 2
@@ -51,8 +57,8 @@ def sub_callback(topic, msg):
 
     # Traiter en fonction du topic
     if topic == topic_gas:
-        gas_val = data.get("gas_value", 0)
-        if gas_val > 80:
+        gas_val = data.get("gaz_level", 0)
+        if gas_val > 500:
             led.value(1)
             moteur_on()
             print("LED et Moteur ON (gaz élevé: {})".format(gas_val))
@@ -83,5 +89,11 @@ print("Abonné aux topics", topic_gas, "et", topic_kpi)
 
 # Boucle principale : attente des messages MQTT
 while True:
-    client.wait_msg()
+    try:
+        client.check_msg()  # check_msg() évite de bloquer l'exécution
+        time.sleep(0.1)  # Petite pause pour éviter une boucle trop rapide
+    except Exception as e:
+        print("Erreur MQTT:", e)
+        time.sleep(1)  # Pause avant de réessayer
+
 
