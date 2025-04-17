@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto_pass.txt:/mosquitto/config/mosquitto_pass.txt
+    stdin_open: true
+    tty: true
+
+  mqtt-forwarder:
+    build: ./mqtt-forwarder
+    depends_on:
+      - mosquitto
+    restart: always
+
