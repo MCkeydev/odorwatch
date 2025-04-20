@@ -1,5 +1,7 @@
 # OdorWatch - Projet IoT
 
+Lien du rapport du projet : https://docs.google.com/document/d/1WDp3AWIIlBAhqI4_pr5qyOVK_yalWuR4Vc_bLJiXQpw/edit?usp=sharing
+
 Bienvenue dans le projet **OdorWatch** ! Ce projet a pour but de développer une solution IoT innovante qui permet de mesurer la qualité de l'air dans des cabines de toilettes. Grâce à divers capteurs, notre système évalue en temps réel des paramètres comme les COV, la température et la concentration de gaz afin de déterminer si une cabine est "supportable" après utilisation. Le résultat est affiché sur un écran, et en cas de mauvaise qualité d’air, une ventilation (et même un désodorisant) peut être activée.
 
 ---
